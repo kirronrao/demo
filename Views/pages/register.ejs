@@ -1,0 +1,114 @@
+
+<!-- views/pages/about.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+<div class="jumbotron jumbotron-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <h1 class="h1">
+                    Register</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<% if(typeof errors != 'undefined') {%>
+<div class="alert alert-danger">
+  <!--<strong>Danger!</strong>-->
+<ul>
+<% errors.forEach(function(error){ %>
+
+ <li> <%= error.msg %></li>
+
+   
+  <% })%> 
+</ul>
+</div>
+  <% }%>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="well well-sm">
+                <form action="register" method="post" >
+                <div class="row">
+                    <div class="col-md-12">
+
+ <div class="form-group">
+                            <label for="name">
+                                 First Name</label>
+                               <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                </span>
+                                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Enter First Name" required="required" /></div>
+                        </div>
+ <div class="form-group">
+                            <label for="name">
+                                 Last Name</label>
+                               <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                </span>
+                                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Enter Last Name" required="required" /></div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="name">
+                                 Username</label>
+                               <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                </span>
+                                <input type="text" class="form-control" name="email" id="email" placeholder="Enter  Email id" required="required" /></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">
+                                Password</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                </span>
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Enter Password" required="required" /></div>
+                        </div>
+
+			<div class="form-group">
+                            <label for="email">
+                             Confirm   Password</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                </span>
+                                <input type="password" class="form-control" name="cpassword" id="cpassword" placeholder="Re-enter Password" required="required" /></div>
+                        </div>
+
+                         <div class="form-group">
+                        <button type="submit" class="btn btn-primary pull-right" id="btnRegister">
+                            Register</button>
+                    </div>
+                    </div>
+                   
+                </div>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+</main>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>
+
+

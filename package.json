@@ -1,0 +1,50 @@
+{
+  "name": "node-mongo",
+  "version": "1.0.0",
+  "description": "Demo project on node js and mongo db",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KiranBhujbal/NodeMongoDemo.git"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "mongo"
+  ],
+  "author": "Kiran Bhujbal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KiranBhujbal/NodeMongoDemo/issues"
+  },
+  "homepage": "https://github.com/KiranBhujbal/NodeMongoDemo#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "bunyan": "^1.8.12",
+    "child_process": "^1.0.2",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-flash": "0.0.2",
+    "express-session": "^1.15.6",
+    "express-validator": "^4.3.0",
+    "fs": "0.0.1-security",
+    "gulp": "^3.9.1",
+    "gulp-merge-json": "^1.2.1",
+    "json-concat": "0.0.1",
+    "jsonfile": "^4.0.0",
+    "md5": "^2.2.1",
+    "mongodb": "^3.0.1",
+    "mongoose": "^4.13.7",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.14.3",
+    "promise": "^8.0.1",
+    "sloc": "^0.2.0",
+    "util": "^0.10.3",
+    "validator": "^9.2.0",
+    "winston": "^2.4.0"
+  }
+}

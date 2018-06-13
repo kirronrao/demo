@@ -1,0 +1,24 @@
+<!-- views/partials/header.ejs -->
+
+
+<%
+
+var menus = [
+
+{id:'user/login',name:'Login'},
+{id:'user/register',name:'Register'},
+{id:'user/dashboard',name:'Dashoard'},
+];
+%>
+<nav class="navbar navbar-expand-sm bg-light">
+
+      <ul class="nav nav-pills">
+    <% menus.forEach(function(menu) { %>
+<li  class="nav-item"><a  class="nav-link" href="/<%= menu.id %>"><%= menu.name %></a>    </li>
+      
+    <% }); %>
+</ul>
+
+       
+
+</nav>

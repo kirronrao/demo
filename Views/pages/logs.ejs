@@ -1,0 +1,125 @@
+<!-- views/pages/about.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+    <style>.pagination {
+    display: inline;
+list-style-type:none;
+}
+.active a{color:green; background-color: white !important;}
+.pagination a {
+    color: black;
+   background-color: grey;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}</style>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+<div class="jumbotron jumbotron-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <h1 class="h1">
+                   Logs</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well well-sm">
+                
+                <table width="100%" border = "1">
+                  <tr>
+
+                  <th>Activity</th>
+                  <th>Steps</th>
+                  <th>Request</th>
+                  <th>Response</th>
+                  </tr>
+
+                <% for(var i=0; i < data.length; i++) { %>
+                   <tr>
+                     <td>
+                     <ul>
+                     <li>API : <%= data[i].activity.API %></li>
+                     <li>Timestamp : <%= data[i].activity.Timestamp %></li>
+                     <li>Browser : <%= data[i].activity.Browser %></li>
+                    <li>UserIP : <%= data[i].activity.UserIP %></li>
+                    <li>Device : <%= data[i].activity.Device %></li>
+                    </ul>
+
+                     </td>
+                     <td><%= data[i].steps %></td>
+                     <td> <ul>
+                     <li>First Name : <%= data[i].request.first_name %></li>
+                     <li>Last Name : <%= data[i].request.last_name %></li>
+                    
+                    </ul></td>
+
+                     <td> <ul>
+                     <li>Status : <%= data[i].response.status %></li>
+                     <li>Result : <%= data[i].response.result %></li>
+                    
+                    </ul></td>
+                   </tr>
+                <% } %>
+              
+
+
+                </table>
+
+<% if (pageCount > 1) { %>  
+<ul class="pagination">  
+  <% if (currentPage > 1) { %>
+      <li><a href="/logs/?page=1">&laquo;</a></li>
+  <% } %>
+  <% var i = 1;
+  if (currentPage > 5) {
+  i = +currentPage - 4;
+  } %>
+  <% if (i !== 1) { %>
+      <li class="disabled"><a href="#">...</a></li>
+  <% } %>
+  <% for (i; i<=pageCount; i++) { %>
+    <% if (currentPage == i) { %>
+        <li class="active"><a href="javascript:void(0);"><%= i %></a></li>
+    <% } else { %>
+        <li><a href="/logs/?page=<%= i %>"><%= i %></a></li>
+    <% } %>
+    <% if (i == (+currentPage + 4)) { %>
+        <li class="disabled"><a href="#">...</a></li>
+    <% break; } %>
+  <% } %>
+  <% if (currentPage != pageCount) { %>
+      <li><a href="/logs/?page=<%= pageCount %>">&raquo;</a></li>
+  <% } %>
+</ul>  
+<% } %>  
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+</main>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>
+
+
+
